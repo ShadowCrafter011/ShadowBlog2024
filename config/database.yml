@@ -21,7 +21,7 @@ default: &default
 
 development:
   <<: *default
-  database: rails_v8_template_development
+  database: shadow_blog_development
   host: postgres
   username: postgres
   password: <%= ENV.fetch("POSTGRES_PASSWORD", nil) %>
@@ -30,7 +30,7 @@ development:
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: rails_v8_template
+  #username: shadow_blog
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -58,7 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rails_v8_template_test
+  database: shadow_blog_test
   host: postgres
   username: postgres
   password: <%= ENV.fetch("POSTGRES_PASSWORD", "nil") %>
@@ -86,18 +86,18 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: rails_v8_template_production
-    username: rails_v8_template
-    password: <%= ENV["RAILS_V8_TEMPLATE_DATABASE_PASSWORD"] %>
+    database: shadow_blog_production
+    username: shadow_blog
+    password: <%= ENV["SHADOW_BLOG_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
-    database: rails_v8_template_production_cache
+    database: shadow_blog_production_cache
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: rails_v8_template_production_queue
+    database: shadow_blog_production_queue
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: rails_v8_template_production_cable
+    database: shadow_blog_production_cable
     migrations_paths: db/cable_migrate
