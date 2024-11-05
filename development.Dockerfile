@@ -4,6 +4,8 @@
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 FROM ruby:3.3
 
+RUN mkdir /workspace
+
 WORKDIR /workspace
 
 # Install base packages
