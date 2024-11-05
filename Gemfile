@@ -62,6 +62,8 @@ group :development do
   gem "rubocop", "~> 1.68"
 
   gem "fiddle"
+
+  gem "letter_opener"
 end
 
 group :test do
@@ -69,3 +71,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "devise", "~> 4.9"

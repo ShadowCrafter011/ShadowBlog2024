@@ -1,0 +1,9 @@
+@layer base {
+    .base {
+        @apply bg-blue-600;
+    }
+
+    .dark {
+        @apply bg-gray-800 text-white;
+    }
+}

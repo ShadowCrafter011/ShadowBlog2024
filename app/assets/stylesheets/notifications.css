@@ -1,0 +1,10 @@
+@layer components {
+    .base {
+        .notice {
+            @apply font-bold;
+        }
+        .alert {
+            @apply font-bold text-red-600;
+        }
+    }
+}
