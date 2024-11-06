@@ -1,14 +1,39 @@
 @layer components {
     .base {
-        .notice {
-            @apply rounded border border-teal-600 p-2;
+        .notifications-container {
+            @apply space-y-2;
+        }
 
-            .notice-header {
-                @apply bg-indigo-500 font-bold uppercase text-white;
+        .notice,
+        .alert {
+            @apply rounded-md border p-2 shadow-md;
+
+            .notice-header,
+            .alert-header {
+                @apply font-bold uppercase;
             }
         }
+
         .alert {
-            @apply font-bold text-red-600;
+            @apply border-red-600 text-red-600;
+        }
+        .notice {
+            @apply border-cyan-500;
+        }
+
+        .notice .close-notice,
+        .alert .close-alert {
+            @apply h-4 cursor-pointer transition-all hover:h-5;
+        }
+
+        .notice,
+        .alert {
+            @apply flex items-center justify-between;
+        }
+
+        .close-notice-container,
+        .close-alert-container {
+            @apply flex h-5 w-5 items-center justify-center;
         }
     }
 }
