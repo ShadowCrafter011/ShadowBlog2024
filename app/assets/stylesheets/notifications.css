@@ -1,7 +1,11 @@
 @layer components {
     .base {
         .notice {
-            @apply font-bold;
+            @apply rounded border border-teal-600 p-2;
+
+            .notice-header {
+                @apply bg-indigo-500 font-bold uppercase text-white;
+            }
         }
         .alert {
             @apply font-bold text-red-600;
