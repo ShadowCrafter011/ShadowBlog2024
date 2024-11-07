@@ -6,5 +6,9 @@
 #
 one:
   email: email1
+  role: owner
+  confirmed_at: <%= Time.now %>
 two:
   email: email2
+  role: user
+  confirmed_at: <%= Time.now %>

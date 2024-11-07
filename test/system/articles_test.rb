@@ -1,6 +1,8 @@
 require "application_system_test_case"
 
 class ArticlesTest < ApplicationSystemTestCase
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @article = articles(:one)
   end
@@ -11,12 +13,13 @@ class ArticlesTest < ApplicationSystemTestCase
   end
 
   test "should create article" do
+    sign_in users(:one)
+
     visit articles_url
     click_on "New article"
 
-    fill_in "Body", with: @article.body
+    fill_in_rich_text_area "Body", with: @article.body
     fill_in "Title", with: @article.title
-    fill_in "User", with: @article.user_id
     click_on "Create Article"
 
     assert_text "Article was successfully created"
@@ -24,12 +27,13 @@ class ArticlesTest < ApplicationSystemTestCase
   end
 
   test "should update Article" do
+    sign_in users(:one)
+
     visit article_url(@article)
     click_on "Edit this article", match: :first
 
-    fill_in "Body", with: @article.body
+    fill_in_rich_text_area "Body", with: @article.body
     fill_in "Title", with: @article.title
-    fill_in "User", with: @article.user_id
     click_on "Update Article"
 
     assert_text "Article was successfully updated"
@@ -37,6 +41,8 @@ class ArticlesTest < ApplicationSystemTestCase
   end
 
   test "should destroy Article" do
+    sign_in users(:one)
+
     visit article_url(@article)
     click_on "Destroy this article", match: :first
 

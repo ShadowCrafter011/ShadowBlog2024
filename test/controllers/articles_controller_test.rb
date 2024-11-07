@@ -1,6 +1,8 @@
 require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @article = articles(:one)
   end
@@ -11,11 +13,15 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
+    sign_in users(:one)
+
     get new_article_url
     assert_response :success
   end
 
   test "should create article" do
+    sign_in users(:one)
+
     assert_difference("Article.count") do
       post articles_url, params: { article: { body: @article.body, title: @article.title, user_id: @article.user_id } }
     end
@@ -29,16 +35,22 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
+    sign_in users(:one)
+
     get edit_article_url(@article)
     assert_response :success
   end
 
   test "should update article" do
+    sign_in users(:one)
+
     patch article_url(@article), params: { article: { body: @article.body, title: @article.title, user_id: @article.user_id } }
     assert_redirected_to article_url(@article)
   end
 
   test "should destroy article" do
+    sign_in users(:one)
+
     assert_difference("Article.count", -1) do
       delete article_url(@article)
     end
