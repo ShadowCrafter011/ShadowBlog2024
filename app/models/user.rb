@@ -4,4 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable
+
+  has_many :articles
+
+  validates :role, inclusion: { in: %w[user owner writer] }
+
+  def writer?
+    role == "owner" || role == "writer"
+  end
+
+  def owner?
+    role == "owner"
+  end
 end
