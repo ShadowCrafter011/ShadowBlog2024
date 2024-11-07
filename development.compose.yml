@@ -24,5 +24,10 @@ services:
       - "4444:4444"
       - "7900:7900"
 
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    ports:
+      - "8025:8025"
+
 volumes:
   dev-db-data:
