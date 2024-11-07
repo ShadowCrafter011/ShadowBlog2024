@@ -1,7 +1,7 @@
 @layer components {
     .base {
         .notifications-container {
-            @apply space-y-2;
+            @apply mb-5 space-y-2;
         }
 
         .notice,
