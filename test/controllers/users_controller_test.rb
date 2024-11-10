@@ -8,6 +8,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get login" do
+    get new_user_session_path
+    assert_response :success
+  end
+
   test "should create new user" do
     post user_registration_path, params: { user: { username: "abc", email: "abc@shadowcrafter.org", password: "PlaceholderPassword1", password_confirmation: "PlaceholderPassword1" } }
     assert_response :redirect
@@ -73,5 +78,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "user can logout" do
     delete destroy_user_session_path
     assert_response :redirect
+  end
+
+  test "should destroy user" do
+    sign_in users(:two)
+
+    assert_difference "User.count", -1 do
+      delete user_registration_path
+    end
   end
 end
