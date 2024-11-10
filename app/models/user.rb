@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :articles
 
   validates :role, inclusion: { in: %w[user owner writer] }
+  validates :username, uniqueness: { case_sensitive: false }, presence: true, length: { in: 3..16 }, format: { with: /\A[\w-]+\z/, message: "Usernname may only contain alphanumerical characters and underscores." }
 
   def writer?
     role == "owner" || role == "writer"
