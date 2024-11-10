@@ -5,12 +5,24 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: email1
+  email: email1@shadowcrafter.org
   username: one
   role: owner
   confirmed_at: <%= Time.now %>
 two:
-  email: email2
+  email: email2@shadowcrafter.org
   username: two
   role: user
+  confirmed_at: <%= Time.now %>
+  encrypted_password: <%= Devise::Encryptor.digest User, "PlaceholderPassword1" %>
+unconfirmed:
+  email: unconfirmed@shadowcrafter.org
+  username: unconfirmend
+  role: user
+  encrypted_password: <%= Devise::Encryptor.digest User, "PlaceholderPassword1" %>
+confirmed:
+  email: confirmed@shadowcrafter.org
+  username: confirmed
+  role: user
+  encrypted_password: <%= Devise::Encryptor.digest User, "PlaceholderPassword1" %>
   confirmed_at: <%= Time.now %>
