@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    redirect_to title: @article.url_title unless params[:title] == @article.url_title
   end
 
   # GET /articles/new
