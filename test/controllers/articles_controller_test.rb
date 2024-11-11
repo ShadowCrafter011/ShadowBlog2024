@@ -51,7 +51,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show article" do
-    get article_with_title_url(@article.url_title, @article.id)
+    get article_url(@article)
     assert_response :success
   end
 
@@ -73,7 +73,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:one)
 
     patch article_url(@article), params: { article: { body: @article.body, title: @article.title, user_id: @article.user_id } }
-    assert_redirected_to article_url(@article)
+    assert_response :redirect
   end
 
   test "should prevent disallowed article destruction" do

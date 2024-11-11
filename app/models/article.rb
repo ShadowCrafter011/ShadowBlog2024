@@ -1,11 +1,10 @@
 class Article < ApplicationRecord
   belongs_to :user
 
-  has_rich_text :body
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
-  def url_title
-    title.gsub(" ", "-")
-  end
+  has_rich_text :body
 
   def user_can_edit?(user)
     user.present? && (user.owner? || user == self.user)
