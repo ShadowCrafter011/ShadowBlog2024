@@ -117,7 +117,7 @@ GEM
       tzinfo
     ffi (1.17.0-x86-mingw32)
     ffi (1.17.0-x86_64-linux-gnu)
-    fiddle (1.1.4)
+    fiddle (1.1.5)
     foreman (0.88.1)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
