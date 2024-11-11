@@ -6,4 +6,8 @@ class Article < ApplicationRecord
   def url_title
     title.gsub(" ", "-")
   end
+
+  def user_can_edit?(user)
+    user.present? && (user.owner? || user == self.user)
+  end
 end

@@ -71,7 +71,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_wrote_article!
-      redirect_to @article, alert: "You cannot manage this article." unless current_user.owner? || current_user == @article.user
+      redirect_to @article, alert: "You cannot manage this article." unless @article.user_can_edit? current_user
     end
 
     # Only allow a list of trusted parameters through.

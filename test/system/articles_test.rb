@@ -23,7 +23,7 @@ class ArticlesTest < ApplicationSystemTestCase
     click_on "Create Article"
 
     assert_text "Article was successfully created"
-    click_on "Back"
+    click_on "View all articles"
   end
 
   test "should update Article" do
@@ -37,7 +37,7 @@ class ArticlesTest < ApplicationSystemTestCase
     click_on "Update Article"
 
     assert_text "Article was successfully updated"
-    click_on "Back"
+    click_on "View all articles"
   end
 
   test "should destroy Article" do
@@ -45,6 +45,8 @@ class ArticlesTest < ApplicationSystemTestCase
 
     visit article_url(@article)
     click_on "Destroy this article", match: :first
+
+    page.accept_alert
 
     assert_text "Article was successfully destroyed"
   end

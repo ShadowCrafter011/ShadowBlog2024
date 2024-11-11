@@ -1,6 +1,7 @@
 @import "general";
 @import "notifications";
 @import "actiontext";
+@import "headers";
 
 @tailwind base;
 @tailwind components;
