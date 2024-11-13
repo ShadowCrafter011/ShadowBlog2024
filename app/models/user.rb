@@ -20,4 +20,8 @@ class User < ApplicationRecord
   def owner?
     role == "owner"
   end
+
+  def should_generate_new_friendly_id?
+    slug.blank? || username_changed?
+  end
 end

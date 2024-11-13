@@ -9,4 +9,8 @@ class Article < ApplicationRecord
   def user_can_edit?(user)
     user.present? && (user.owner? || user == self.user)
   end
+
+  def should_generate_new_friendly_id?
+    slug.blank? || title_changed?
+  end
 end
