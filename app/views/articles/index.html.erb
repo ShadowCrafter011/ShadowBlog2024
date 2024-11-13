@@ -1,12 +1,18 @@
 <% content_for :title, "All articles" %>
-<h1>Articles</h1>
+<h1 class="articles-list-header">ShadowBlog Articles</h1>
 
 <% if current_user&.writer? %>
-  <%= link_to "New article", new_article_path, class: "new-article-button" %>
+  <div class="new-article-button-container">
+    <%= link_to "New article", new_article_path, class: "new-article-button" %>
+  </div>
 <% end %>
 
 <div class="articles-list">
   <% @articles.each do |article| %>
-    <%= link_to article.title, article, class: "article-link" %>
+    <%= link_to article, class: "article-link" do %>
+      <span class="article-title"><%= article.title %></span>
+      <span class="article-created-ago">Created <%= distance_of_time_in_words_to_now article.created_at %> ago</span>
+      <span class="article-created-by">Created by <%= article.user.username %></span>
+    <% end %>
   <% end %>
 </div>

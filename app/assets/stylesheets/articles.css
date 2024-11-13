@@ -1,0 +1,31 @@
+@layer components {
+    .base {
+        .new-article-button-container {
+            @apply my-2 flex justify-center;
+
+            .new-article-button {
+                @apply rounded bg-indigo-500 p-2 font-bold text-white transition-colors hover:bg-indigo-600;
+            }
+        }
+
+        .articles-list {
+            @apply flex flex-col space-y-2;
+
+            .article-link {
+                @apply grid grid-flow-row rounded border border-gray-500 bg-gray-100 p-2 shadow transition-colors hover:bg-gray-200 md:grid-cols-2;
+
+                .article-created-ago {
+                    @apply order-3 md:order-2 md:text-right;
+                }
+
+                .article-title {
+                    @apply order-1 font-bold;
+                }
+
+                .article-created-by {
+                    @apply order-2 md:order-3;
+                }
+            }
+        }
+    }
+}

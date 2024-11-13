@@ -2,6 +2,7 @@
 @import "notifications";
 @import "actiontext";
 @import "headers";
+@import "articles";
 
 @tailwind base;
 @tailwind components;
