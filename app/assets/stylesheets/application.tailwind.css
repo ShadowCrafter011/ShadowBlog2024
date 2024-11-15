@@ -3,6 +3,7 @@
 @import "actiontext";
 @import "headers";
 @import "articles";
+@import "nav_button";
 
 @tailwind base;
 @tailwind components;

@@ -4,7 +4,7 @@
             @apply my-2 flex justify-center;
 
             .new-article-button {
-                @apply rounded bg-indigo-500 p-2 font-bold text-white transition-colors hover:bg-indigo-600;
+                @apply nav-button;
             }
         }
 
@@ -25,6 +25,26 @@
                 .article-created-by {
                     @apply order-2 md:order-3;
                 }
+            }
+        }
+
+        .trix-content-container {
+            @apply mt-5 flex justify-center;
+
+            .trix-content {
+                @apply max-w-2xl hyphens-auto;
+
+                figure {
+                    @apply flex flex-col items-center;
+                }
+            }
+        }
+
+        .article-nav-links {
+            @apply my-2 flex justify-center gap-2;
+
+            a {
+                @apply nav-button;
             }
         }
     }

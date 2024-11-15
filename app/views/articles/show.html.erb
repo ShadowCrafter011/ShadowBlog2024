@@ -3,11 +3,15 @@
 
 <h2>Written by <%= @article.user.username %></h2>
 
-<%= link_to "View all articles", articles_path, class: "all-articles-button" %>
+<div class="article-nav-links">
+  <%= link_to "View all articles", articles_path, class: "all-articles-button" %>
 
-<% if @article.user_can_edit? current_user %>
-  <%= link_to "Edit this article", edit_article_path, class: "edit-article-button" %>
-  <%= link_to "Destroy this article", article_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?" }, class: "destroy-article-button" %>
-<% end %>
+  <% if @article.user_can_edit? current_user %>
+    <%= link_to "Edit this article", edit_article_path, class: "edit-article-button" %>
+    <%= link_to "Destroy this article", article_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this article?" }, class: "destroy-article-button" %>
+  <% end %>
+</div>
 
-<%= @article.body %>
+<div class="trix-content-container">
+  <%= @article.body %>
+</div>
