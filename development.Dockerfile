@@ -25,7 +25,7 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 # Install node for postcss with tailwindcss-rails
-ENV NODE_VERSION=16.13.0
+ENV NODE_VERSION=22.11.0
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 ENV NVM_DIR=/root/.nvm
 RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
