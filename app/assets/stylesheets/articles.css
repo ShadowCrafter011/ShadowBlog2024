@@ -47,5 +47,21 @@
                 @apply nav-button;
             }
         }
+
+        .article-save {
+            @apply nav-button mb-3 w-full max-w-none font-medium;
+        }
+
+        .edit-nav-container {
+            @apply mb-5 flex gap-2;
+
+            .article-show {
+                @apply nav-button max-w-none font-medium;
+            }
+
+            .articles-list {
+                @apply nav-button max-w-none font-medium;
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 @layer components {
     .nav-button {
-        @apply max-w-sm grow rounded bg-indigo-500 p-2 text-center font-bold text-white transition-colors hover:bg-indigo-600;
+        @apply max-w-sm grow cursor-pointer rounded bg-indigo-500 p-2 text-center font-bold text-white transition-colors hover:bg-indigo-600;
     }
 }
