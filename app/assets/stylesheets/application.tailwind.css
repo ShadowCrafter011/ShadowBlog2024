@@ -4,6 +4,7 @@
 @import "headers";
 @import "articles";
 @import "nav_button";
+@import "account";
 
 @tailwind base;
 @tailwind components;

@@ -1,11 +1,7 @@
 @layer components {
     .base {
-        .new-article-button-container {
-            @apply my-2 flex justify-center;
-
-            .new-article-button {
-                @apply nav-button;
-            }
+        .account-buttons .new-article-button {
+            @apply nav-button max-w-none sm:max-w-sm;
         }
 
         .articles-list {

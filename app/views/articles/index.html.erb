@@ -1,11 +1,19 @@
 <% content_for :title, "All articles" %>
 <h1 class="articles-list-header">ShadowBlog Articles</h1>
 
-<% if current_user&.writer? %>
-  <div class="new-article-button-container">
+<div class="account-buttons">
+  <% if user_signed_in? && current_user.writer? %>
     <%= link_to "New article", new_article_path, class: "new-article-button" %>
-  </div>
-<% end %>
+  <% end %>
+
+  <% unless user_signed_in? %>
+    <%= link_to "Sign in", new_user_session_path, class: "sign-in" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "sign-up" %>
+  <% else %>
+    <%= link_to "Logout", destroy_user_session_path, class: "logout", data: { turbo_method: :delete } %>
+    <%= link_to "Edit account", edit_user_registration_path, class: "edit" %>
+  <% end %>
+</div>
 
 <div class="articles-list">
   <% @articles.each do |article| %>

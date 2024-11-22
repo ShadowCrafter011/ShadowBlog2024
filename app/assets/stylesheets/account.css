@@ -1,0 +1,14 @@
+@layer components {
+    .base {
+        .account-buttons {
+            @apply my-2 flex flex-col justify-center gap-2 sm:flex-row;
+
+            .sign-in,
+            .sign-up,
+            .logout,
+            .edit {
+                @apply nav-button max-w-none bg-teal-700 hover:bg-teal-800 sm:max-w-sm;
+            }
+        }
+    }
+}
