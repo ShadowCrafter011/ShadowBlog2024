@@ -37,15 +37,15 @@
         }
 
         .article-nav-links {
-            @apply my-2 flex justify-center gap-2;
+            @apply my-2 flex flex-col justify-center gap-2 sm:flex-row;
 
             a {
-                @apply nav-button;
+                @apply nav-button max-w-none sm:max-w-sm;
             }
         }
 
         .article-save {
-            @apply nav-button mb-3 w-full max-w-none font-medium;
+            @apply nav-button mb-3 w-full max-w-none bg-teal-700 font-medium hover:bg-teal-800;
         }
 
         .edit-nav-container {
@@ -56,6 +56,14 @@
             }
 
             .articles-list {
+                @apply nav-button max-w-none font-medium;
+            }
+        }
+
+        .new-nav-container {
+            @apply mb-5 flex gap-2;
+
+            .back-to-articles {
                 @apply nav-button max-w-none font-medium;
             }
         }
