@@ -11,6 +11,6 @@ class Article < ApplicationRecord
   end
 
   def should_generate_new_friendly_id?
-    slug.blank? || title_changed?
+    title_changed? || super
   end
 end

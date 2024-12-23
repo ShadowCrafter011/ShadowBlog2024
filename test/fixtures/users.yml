@@ -9,20 +9,24 @@ one:
   username: one
   role: owner
   confirmed_at: <%= Time.now %>
+  slug: one
 two:
   email: email2@shadowcrafter.org
   username: two
   role: user
   confirmed_at: <%= Time.now %>
   encrypted_password: <%= Devise::Encryptor.digest User, "PlaceholderPassword1" %>
+  slug: two
 unconfirmed:
   email: unconfirmed@shadowcrafter.org
   username: unconfirmend
   role: user
   encrypted_password: <%= Devise::Encryptor.digest User, "PlaceholderPassword1" %>
+  slug: unconfirmed
 confirmed:
   email: confirmed@shadowcrafter.org
   username: confirmed
   role: user
   encrypted_password: <%= Devise::Encryptor.digest User, "PlaceholderPassword1" %>
   confirmed_at: <%= Time.now %>
+  slug: confirmed

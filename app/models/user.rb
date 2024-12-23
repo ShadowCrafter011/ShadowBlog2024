@@ -22,6 +22,6 @@ class User < ApplicationRecord
   end
 
   def should_generate_new_friendly_id?
-    slug.blank? || username_changed?
+    username_changed? || super
   end
 end
