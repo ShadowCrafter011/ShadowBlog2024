@@ -20,9 +20,6 @@ ENV RAILS_ENV="development" \
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config
 
-# Install application gems
-COPY Gemfile Gemfile.lock ./
-RUN bundle install
 
 # Install node for postcss with tailwindcss-rails
 ENV NODE_VERSION=22.11.0
@@ -32,5 +29,3 @@ RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
 RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
 RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
 ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
-COPY package.json package-lock.json ./
-RUN npm install
