@@ -59,7 +59,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  gem "rubocop", "~> 1.68"
+  gem "rubocop", "~> 1.71"
 
   gem "fiddle"
 end
