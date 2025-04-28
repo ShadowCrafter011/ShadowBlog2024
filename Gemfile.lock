@@ -117,7 +117,7 @@ GEM
       tzinfo
     ffi (1.17.0-x86-mingw32)
     ffi (1.17.0-x86_64-linux-gnu)
-    fiddle (1.1.5)
+    fiddle (1.1.8)
     foreman (0.88.1)
     friendly_id (5.5.1)
       activerecord (>= 4.0.0)
