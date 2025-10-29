@@ -73,3 +73,5 @@ end
 gem "devise", "~> 4.9"
 
 gem "friendly_id", "~> 5.5"
+
+gem "google-cloud-storage", "~> 1.57"
