@@ -1,0 +1,20 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--   based on monkeytype sitemap https://monkeytype.com/sitemap.xml   -->
+<url>
+<loc>https://www.shadowcrafter.org</loc>
+</url>
+<url>
+<loc>https://www.shadowcrafter.org/login</loc>
+</url>
+<url>
+<loc>https://www.shadowcrafter.org/edit</loc>
+</url>
+<url>
+<loc>https://www.shadowcrafter.org/register</loc>
+</url>
+<% @article_urls.each do |url| %>
+    <url>
+    <loc><%= url %></loc>
+    </url>
+<% end %>
+</urlset>
