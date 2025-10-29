@@ -29,6 +29,7 @@ trix-toolbar .trix-button-group {
     border-top-color: #ccc;
     border-bottom-color: #888;
     border-radius: 3px;
+    background-color: rgb(255, 255, 255);
 }
 trix-toolbar .trix-button-group:not(:first-child) {
     margin-left: 1.5vw;

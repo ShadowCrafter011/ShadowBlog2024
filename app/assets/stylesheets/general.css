@@ -4,6 +4,6 @@
     }
 
     .link {
-        @apply text-emerald-500 underline transition-colors hover:text-emerald-600;
+        @apply text-teal-500 underline transition-colors hover:text-teal-600;
     }
 }
