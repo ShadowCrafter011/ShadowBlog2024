@@ -13,5 +13,5 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   else
     { browser: :chrome }
   end
-  driven_by :selenium, using: :headless_chrome, options: options
+  driven_by :selenium, using: :chrome, options: options
 end
