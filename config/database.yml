@@ -87,7 +87,7 @@ production:
   primary: &primary_production
     <<: *default
     database: shadow_blog_production
-    url: ENV["DATABASE_URL"]
+    url: <%= ENV["DATABASE_URL"] %>
   cache:
     <<: *primary_production
     database: shadow_blog_production_cache
