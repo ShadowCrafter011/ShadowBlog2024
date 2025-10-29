@@ -5,6 +5,7 @@
 @import "articles";
 @import "nav_button";
 @import "account";
+@import "devise";
 
 @tailwind base;
 @tailwind components;

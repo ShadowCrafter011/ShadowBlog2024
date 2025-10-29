@@ -1,5 +1,6 @@
 @layer components {
-    .base {
+    .base,
+    .dark {
         .account-buttons {
             @apply my-2 flex flex-col justify-center gap-2 sm:flex-row;
 
@@ -10,5 +11,9 @@
                 @apply nav-button max-w-none bg-teal-700 hover:bg-teal-800 sm:max-w-sm;
             }
         }
+    }
+
+    .account-button {
+        @apply cursor-pointer rounded border border-blue-800 bg-blue-500 p-2 text-center transition-colors hover:bg-blue-600 sm:w-[30rem];
     }
 }

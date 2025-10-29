@@ -2,4 +2,8 @@
     .dark {
         @apply bg-gray-800 text-white;
     }
+
+    .link {
+        @apply text-emerald-500 underline transition-colors hover:text-emerald-600;
+    }
 }

@@ -1,5 +1,6 @@
 @layer components {
-    .base {
+    .base,
+    .dark {
         .account-buttons .new-article-button {
             @apply nav-button max-w-none sm:max-w-sm;
         }

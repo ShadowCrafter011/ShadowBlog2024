@@ -1,0 +1,27 @@
+@layer components {
+    div.field {
+        @apply flex flex-row justify-start gap-2;
+    }
+
+    div.field input:not([type="checkbox"]),
+    div.field textarea {
+        @apply mb-2 grow rounded border border-emerald-500 bg-transparent p-2 focus:outline-0 focus:ring-0;
+    }
+
+    div.field div.field_with_errors {
+        @apply flex grow;
+    }
+
+    div.field div.field_with_errors input,
+    div.field div.field_with_errors textarea {
+        @apply border-red-500;
+    }
+
+    div.field div.field_with_errors {
+        @apply border-red-500;
+    }
+
+    .actions {
+        @apply mt-2 flex justify-center;
+    }
+}
